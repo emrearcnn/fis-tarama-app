@@ -1,0 +1,63 @@
+{
+  "expo": {
+    "name": "Fiş Tarama",
+    "slug": "fis-tarama",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "bundleIdentifier": "com.fistarama.app",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Bu uygulama fişleri taramak için kameraya erişim gerektirir",
+        "NSPhotoLibraryUsageDescription": "Bu uygulama galeri resimlerini seçmek için fotoğraf erişimi gerektirir"
+      }
+    },
+    "android": {
+      "package": "com.fistarama.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Bu uygulama fişleri taramak için kameraya erişim gerektirir"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Bu uygulama galeri resimlerini seçmek için fotoğraf erişimi gerektirir"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "fis-tarama-dev"
+      }
+    }
+  }
+}
