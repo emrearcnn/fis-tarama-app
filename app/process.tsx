@@ -5,8 +5,8 @@ import { processReceipt, ReceiptData } from './services/api';
 
 // API URL sabiti - mobil için Mac IP'si
 const API_URL = Platform.select({
-  ios: 'http://192.168.1.119:3001',
-  android: 'http://192.168.1.119:3001',
+  ios: 'http://192.168.7.102:3001',
+  android: 'http://192.168.7.102:3001',
   default: 'http://localhost:3001', // Web için localhost
 });
 

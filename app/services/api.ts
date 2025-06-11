@@ -2,8 +2,8 @@ import { Platform } from 'react-native';
 
 // Mac'inizin local IP'si (log'dan alındı: 192.168.1.119)
 const API_URL = Platform.select({
-  ios: 'http://192.168.1.119:3001',
-  android: 'http://192.168.1.119:3001',
+  ios: 'http://192.168.7.102:3001',
+  android: 'http://192.168.7.102:3001',
   default: 'http://localhost:3001', // Web için localhost
 });
 
