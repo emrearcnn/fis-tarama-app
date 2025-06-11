@@ -8,7 +8,14 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "dev": "expo start --lan",
+    "server": "cd server && python app.py",
+    "server:win": "cd server && python app.py",
+    "server:unix": "cd server && source venv/bin/activate && python app.py",
+    "setup:backend": "cd server && python -m venv venv && pip install -r requirements.txt",
+    "setup:backend:win": "cd server && python -m venv venv && venv\\Scripts\\activate && pip install -r requirements.txt",
+    "setup:backend:unix": "cd server && python -m venv venv && source venv/bin/activate && pip install -r requirements.txt"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",

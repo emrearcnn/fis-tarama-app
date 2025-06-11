@@ -27,9 +27,9 @@ venv/
 
 # Node
 node_modules/
-npm-debug.log
-yarn-debug.log
-yarn-error.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Expo
 .expo/
@@ -65,3 +65,51 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Data files
+server/receipt_data.json
+server/data.json
+*.xlsx
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+uploads/
+temp/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# EAS
+.easignore

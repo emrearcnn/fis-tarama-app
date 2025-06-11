@@ -25,25 +25,45 @@ import platform
 import subprocess
 
 def find_tesseract():
-    try:
-        result = subprocess.run(['which', 'tesseract'], capture_output=True, text=True)
-        if result.returncode == 0:
-            return result.stdout.strip()
-    except:
-        pass
+    system = platform.system()
     
-    # Varsayılan yolları dene
-    possible_paths = [
-        '/opt/homebrew/bin/tesseract',  # Apple Silicon
-        '/usr/local/bin/tesseract',     # Intel Mac
-        '/usr/bin/tesseract'            # Linux
-    ]
+    if system == 'Windows':
+        # Windows için varsayılan yollar
+        possible_paths = [
+            r'C:\Program Files\Tesseract-OCR\tesseract.exe',
+            r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe',
+            r'C:\tesseract\tesseract.exe',
+        ]
+        
+        for path in possible_paths:
+            if os.path.exists(path):
+                print(f"Tesseract found at: {path}")
+                return path
+        
+        print("Tesseract not found. Please install from: https://github.com/UB-Mannheim/tesseract/wiki")
+        return 'tesseract'  # PATH'de bulunmasını umut et
     
-    for path in possible_paths:
-        if os.path.exists(path):
-            return path
-    
-    return 'tesseract'  # PATH'de bulunmasını umut et
+    else:
+        # macOS/Linux için which komutu
+        try:
+            result = subprocess.run(['which', 'tesseract'], capture_output=True, text=True)
+            if result.returncode == 0:
+                return result.stdout.strip()
+        except:
+            pass
+        
+        # Varsayılan yolları dene
+        possible_paths = [
+            '/opt/homebrew/bin/tesseract',  # Apple Silicon
+            '/usr/local/bin/tesseract',     # Intel Mac
+            '/usr/bin/tesseract'            # Linux
+        ]
+        
+        for path in possible_paths:
+            if os.path.exists(path):
+                return path
+        
+        return 'tesseract'  # PATH'de bulunmasını umut et
 
 pytesseract.pytesseract.tesseract_cmd = find_tesseract()
 
