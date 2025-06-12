@@ -162,7 +162,7 @@ def process_receipt():
             try:
                 text = pytesseract.image_to_string(image, lang='eng', config='--psm 6')
             except:
-                return jsonify({'error': f'OCR Error: {str(ocr_error)}'}), 500
+            return jsonify({'error': f'OCR Error: {str(ocr_error)}'}), 500
         
         # Bilgi yakalama fonksiyonları
         def find_vergi_no(text):

@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Alert, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { processReceipt, ReceiptData } from './services/api';
 
-// API URL sabiti - mobil için Mac IP'si
+// API URL sabiti - mobil için Windows IP'si
 const API_URL = Platform.select({
-  ios: 'http://192.168.7.102:3001',
-  android: 'http://192.168.7.102:3001',
+  ios: 'http://192.168.1.138:3001',
+  android: 'http://192.168.1.138:3001',
   default: 'http://localhost:3001', // Web için localhost
 });
 

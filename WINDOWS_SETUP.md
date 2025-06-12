@@ -54,9 +54,13 @@ Windows'ta IP adresinizi bulun:
 ipconfig | findstr IPv4
 ```
 
-`app/index.tsx` dosyasında API URL'ini güncelleyin:
+`app/process.tsx` dosyasında API URL'lerini güncelleyin:
 ```typescript
-const API_URL = 'http://YOUR_WINDOWS_IP:3001';
+const API_URL = Platform.select({
+  ios: 'http://YOUR_WINDOWS_IP:3001',
+  android: 'http://YOUR_WINDOWS_IP:3001',
+  default: 'http://localhost:3001', // Web için localhost
+});
 ```
 
 ## 8. Güvenlik Duvarı Ayarları

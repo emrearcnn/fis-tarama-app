@@ -151,8 +151,9 @@ npx expo start
 # Windows IP'ni al
 ipconfig | findstr IPv4
 
-# app/index.tsx'te kontrol et:
-# API_URL = 'http://[WINDOWS_IP]:3001'
+# app/process.tsx'te kontrol et:
+# ios: 'http://[WINDOWS_IP]:3001',
+# android: 'http://[WINDOWS_IP]:3001',
 ```
 
 ## Acil Durum Komutları

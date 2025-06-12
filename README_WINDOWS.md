@@ -24,14 +24,22 @@ Bu dosyayı çift tıklayın, menüden istediğinizi seçin!
 ## 📱 Telefon Bağlantısı İçin
 
 1. **IP adresinizi öğrenin** (BASLAT_WINDOWS.bat menüsünden "4" seçin)
-2. `app/index.tsx` dosyasını açın
-3. Bu satırı bulun:
+2. `app/process.tsx` dosyasını açın
+3. Bu satırları bulun:
    ```typescript
-   const API_URL = 'http://localhost:3001';
+   const API_URL = Platform.select({
+     ios: 'http://192.168.7.102:3001',
+     android: 'http://192.168.7.102:3001',
+     default: 'http://localhost:3001', // Web için localhost
+   });
    ```
-4. Bunu Windows IP'nizle değiştirin:
+4. IP adreslerini Windows IP'nizle değiştirin:
    ```typescript
-   const API_URL = 'http://192.168.1.XXX:3001';
+   const API_URL = Platform.select({
+     ios: 'http://192.168.1.XXX:3001',
+     android: 'http://192.168.1.XXX:3001',
+     default: 'http://localhost:3001', // Web için localhost
+   });
    ```
 
 ## 🆘 Sorun mu Yaşıyorsunuz?

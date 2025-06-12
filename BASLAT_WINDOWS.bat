@@ -50,8 +50,9 @@ echo.
 echo Windows IP Adresiniz:
 ipconfig | findstr IPv4
 echo.
-echo Bu IP'yi app/index.tsx dosyasinda kullanin:
-echo API_URL = 'http://[YUKARIDAKI_IP]:3001'
+echo Bu IP'yi app/process.tsx dosyasinda kullanin:
+echo ios: 'http://[YUKARIDAKI_IP]:3001',
+echo android: 'http://[YUKARIDAKI_IP]:3001',
 echo.
 pause
 goto menu
